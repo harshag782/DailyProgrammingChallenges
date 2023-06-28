@@ -43,3 +43,16 @@ int main() {
     
     return 0;
 }
+Sample input
+3 4
+ 3  4 -1  2
+-2  5 -3  1
+-4 -3  2  0
+Output
+4
+Explanation:
+The 1st column contains 2 negative numbers.
+
+The 2nd column contains 1 negative number. The 3rd column does not contain any negative number.
+
+The 4th column contains 3 negative numbers. Here, the column 4 has the most number of negative numbers. Hence the output is 4.
