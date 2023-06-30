@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;
+    scanf("%d %d", &N, &X);
+
+    int arr[N];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int lastMultiple = -1; // Initialize to a value not present in the input array
+    for (int i = 0; i < N; i++) {
+        if (arr[i] % X == 0) {
+            lastMultiple = arr[i];
+        }
+        else if (lastMultiple != -1) {
+            arr[i] = lastMultiple;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+ Example Input/Output 1:
+ Input: 
+  7 5 
+  2 10 3 4 15 16 8 
+Output: 
+ 2 10 10 10 15 15 15
+Explanation:
+ The first multiple of 5 is 10. 
+ So all the integers followed by 10 are changed to 10 until encountering another multiple of 5.
+ Now the array becomes 2 10 10 10 15 16 8 The last multiple of 5 is 1 5.
+ So all the integers followed by 15 are changed to 15. 
+ Now the array becomes 2 10 10 10 15 15  15 
