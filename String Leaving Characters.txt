@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char sen[100];
+    scanf(" %[^\n]%*c", sen);
+
+    for (int i = 0, j = 2; i < strlen(sen); i += j, j++) {
+        printf("%c", sen[i]);
+    }
+
+    return 0;
+}
+Example Input/Output 1: 
+Input: abcdefghijklmno 
+Output: acfjo 
+Explanation:
+ 1st character is a.
+ 3rd character is c.
+ 6th character is f.
+ 10th character is j.
+ 15th character is o. 
+So these characters are printed as the output. 
+Example Input/Output 2: 
+Input: northeastwestsouth 
+Output: nrewo                                                                                                                                   
