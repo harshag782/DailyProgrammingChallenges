@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char S[101]; // Assuming the maximum length of string S is 100
+    int X;
+    
+    // Read the string S
+    scanf("%s", S);
+    
+    // Read the value of X
+    scanf("%d", &X);
+    
+    // Print the first X characters of string S
+    for (int i = 0; i < X; i++) {
+        printf("%c", S[i]);
+    }
+    
+    return 0;
+}
+Input/Output 1: 
+Input: 
+SkillRack
+5 
+Output:
+Skill 
+Example 
+Input/Output 2: 
+Input: 
+NEWS
+1 
+Output: 
+N     
