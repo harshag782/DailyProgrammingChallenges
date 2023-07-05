@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char input[101];
+    int sumOdd = 0, sumEven = 0;
+    int i;
+
+    printf("Input: ");
+    fgets(input, sizeof(input), stdin);
+
+    // Remove any trailing newline character
+    if (input[strlen(input) - 1] == '\n')
+        input[strlen(input) - 1] = '\0';
+
+    // Validate the input
+    for (i = 0; i < strlen(input); i++) {
+        if (!isdigit(input[i])) {
+            printf("Invalid\n");
+            return 0;
+        }
+    }
+
+    // Calculate the sums of odd and even digits
+    for (i = 0; i < strlen(input); i++) {
+        int digit = input[i] - '0';
+        if (digit % 2 == 0)
+            sumEven += digit;
+        else
+            sumOdd += digit;
+    }
+
+    // Print the difference
+    printf("Output: %d\n", sumOdd - sumEven);
+
+    return 0;
+}
+ Example Input/Output 1:
+ Input: 118745913 
+ Output: 15 
+Explanation:
+ The sum of odd digits is 27 (1, 1, 7, 5, 9, 1 and 3). 
+ The sum of even digits is 12 (8 and 4). 
+ So the difference is 27-12 = 15. Hence the output is 15 
+ Example Input/Output 2: 
+ Input: 235468173645 
+ Output: -6 
+ Example Input/Output 3: 
+ Input: 76320Afk384 
+ Output: Invalid 
