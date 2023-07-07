@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;
+    scanf("%d %d", &N, &X);
+
+    int last_two_digits = (N % 100) / 10 + (N % 10);  // Calculate the sum of the last two digits
+    int hundredth_digit = X - last_two_digits;  // Calculate the hundredth digit
+
+    // Reframe N by inserting the hundredth digit in between the remaining digits
+    int reframed_N = (N / 100) * 1000 + hundredth_digit * 100 + (N % 100);
+
+    printf("%d\n", reframed_N);
+    return 0;
+}
+Example Input/Output 1:
+ Input: 1269 20
+ Output: 
+ 12569 
+Explanation: 
+ The sum of the last two digits in 1269 is 15. 
+ The difference between 20 and 15 is 5 (20-15).
+ So the hundredth digit is 5. After reframing the N is 12569. 
+ Hence the output is 12569. 
+Example Input/Output 2: 
+Input: 43217 9 
+Output: 432117 
