@@ -32,49 +32,11 @@ int main() {
 
     return 0;
 }
-#include <stdio.h>
 
-int main() {
-    int N;
-    printf("Enter the value of N: ");
-    scanf("%d", &N);
-
-    // Print the pattern
-    for (int i = 1; i <= N; i++) {
-        // Print leading asterisks
-        for (int j = 1; j < i; j++) {
-            printf("*");
-        }
-
-        // Print numbers
-        for (int k = i; k <= N; k++) {
-            printf("%d", k);
-
-            // Print asterisks between numbers
-            if (k < N) {
-                printf("*");
-            }
-        }
-
-        // Print trailing asterisks
-        for (int j = 1; j < i; j++) {
-            printf("*");
-        }
-
-        printf("\n");
-    }
-
-    return 0;
-}
- Example Input/Output 1: Input: 3                                                                                                                                   Output:                                                                                                                                                                                     
-          1*2*3                                                                                                                                                                              
-          *1*2*                                                                                                                                                                                
-          **1**                                                                                                                                                                        Example Input/Output 2:                                                                                                                                              
+ Example Input/Output 1: 
+Input: 3                                                                                                                                   Output:                                                                                                                                                                           
+          1*2*3                                                                                                                                     *1*2*                                                                                                                                     **1**                                                                                                                                                                       
+Example Input/Output 2:                                                                                                                                              
       Input: 6                                                                                                                                                                        
       Output:                                                                                                                                                                 
-                  1*2*3*4*5*6                                                                                                                                           
-                  *1*2*3*4*5*                                                                                                                                             
-                  **1*2*3*4**                                                                                                                                                          
-                  ***1*2*3***                                                                                                                                               
-                  ****1*2****                                                                                                                                               
-                  *****1*****           
+                  1*2*3*4*5*6                                                                                                                               *1*2*3*4*5*                                                                                                                               **1*2*3*4**                                                                                                                               ***1*2*3***                                                                                                                               ****1*2****                                                                                                                               *****1*****          
