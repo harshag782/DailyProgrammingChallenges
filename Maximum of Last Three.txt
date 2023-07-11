@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int unitDigit = N % 10;
+    int tenthDigit = (N / 10) % 10;
+    int hundredthDigit = (N / 100) % 10;
+
+    int largestDigit;
+
+    if (unitDigit >= tenthDigit && unitDigit >= hundredthDigit)
+        largestDigit = unitDigit;
+    else if (tenthDigit >= unitDigit && tenthDigit >= hundredthDigit)
+        largestDigit = tenthDigit;
+    else
+        largestDigit = hundredthDigit;
+
+    printf("%d\n", largestDigit);
+
+    return 0;
+}
+ Example Input/Output 1:
+ Input: 54232 
+ Output: 3 
+Explanation: 
+ The unit digit is 2.
+ The tenth digit is 3. the hundredth digit is 2 .
+ The largest among these digits is 3. 
+ Hence 3 is printed.
+ Example Input/Output 2: 
+ Input: 764356
+ Output: 6   
