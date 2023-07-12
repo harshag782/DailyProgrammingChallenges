@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int is_prime(long long n) {
+    if (n <= 1) {
+        return 0;
+    }
+    if (n == 2 || n == 3) {
+        return 1;
+    }
+    if (n % 2 == 0 || n % 3 == 0) {
+        return 0;
+    }
+    for (long long i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+long long reverse_number(long long n) {
+    long long reverse = 0;
+    while (n > 0) {
+        reverse = reverse * 10 + n % 10;
+        n /= 10;
+    }
+    return reverse;
+}
+
+int main() {
+    long long n;
+    scanf("%lld", &n);
+
+    // Check if n is prime
+    int is_n_prime = is_prime(n);
+
+    // Reverse the number
+    long long reverse_n = reverse_number(n);
+
+    // Check if reverse_n is prime
+    int is_reverse_n_prime = is_prime(reverse_n);
+
+    // Check if n is a twisted prime
+    if (is_n_prime && is_reverse_n_prime) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
+    }
+
+    return 0;
+}
+Example Input/Output 1: 
+Input: 97 
+Output: YES 
+Explanation: 97 is a prime number.
+The reverse of 97 is 79. So 79 is also a prime number.
+Hence the output is YES 
+Example Input/Output 2: 
+Input: 34 
+Output: NO     
