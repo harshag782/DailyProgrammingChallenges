@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n, i, j;
+
+    scanf("%d", &n);
+
+    char strings[100][100];
+    char temp[100];
+
+    for (i = 0; i < n; i++) {
+        scanf("%s", strings[i]);
+    }
+
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (strlen(strings[j]) > strlen(strings[j + 1])) {
+                strcpy(temp, strings[j]);
+                strcpy(strings[j], strings[j + 1]);
+                strcpy(strings[j + 1], temp);
+            }
+        }
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("%s\n", strings[i]);
+    }
+
+    return 0;
+}
+
+Example Input/Output 1:
+
+Input
+
+ 4
+ lemon
+ embezzling 
+ banana
+ ant
+
+Output: ant
+
+lemon
+
+banana
+
+embezzling
+
+Explanation:
+
+The length of the string lemon is 5. The length of the string embezzling is 10.
+
+The length of the string banana is 6. The length of the string ant is 3.
+
+After sorting the string values based on their length are ant, lemon, banana,
+
+embezzling Hence the output is
+
+ant
+
+lemon
+
+banana
+
+embezzling
