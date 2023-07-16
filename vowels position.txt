@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    
+     char s[101];
+     scanf("%s",s);
+     int len=strlen(s);
+     int found_vowels=0;
+     for(int i=0;i<len;i++)
+     {
+         if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'||s[i]=='A'||s[i]=='E'||s[i]=='I'||s[i]=='O'||s[i]=='U')
+         {
+             found_vowels=1;
+             printf("%d ",i+1);
+         }
+     }
+     if(!found_vowels)
+     {
+        printf("-1");
+     }
+
+    return 0;
+}
+
+Example Input/Output 1: 
+Input: Mechanic 
+Output: 2 5 7 
+Explanation: 
+In Mechanic, the vowels are e, a, and i. 
+And their positions are 2, 5 and 7. 
+Hence the output is 2 5 7 
