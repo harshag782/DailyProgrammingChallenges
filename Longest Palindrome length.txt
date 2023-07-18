@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 10001
+
+int main() {
+    char S[MAX_LEN];
+    int consonant_count[26] = {0}; // To count occurrences of each consonant
+    int len, i, longest_palindrome_length = 0;
+
+    // Read input string
+    scanf("%s", S);
+    len = strlen(S);
+
+    // Calculate consonant occurrences and length of the longest palindrome
+    for (i = 0; i < len; i++) {
+        char c = S[i];
+        if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
+            consonant_count[c - 'a']++;
+            longest_palindrome_length += consonant_count[c - 'a'] / 2 * 2;
+        }
+    }
+
+    // Check if there is any consonant with an odd count (can be placed at the center of the palindrome)
+    for (i = 0; i < 26; i++) {
+        if (consonant_count[i] % 2 == 1) {
+            longest_palindrome_length += 1;
+            break;
+        }
+    }
+
+    printf("%d\n", longest_palindrome_length);
+
+    return 0;
+}
+ 
+Example Input/Output 1: 
+Input: abcdeedb 
+Output: 5  
+Explanation: 
+The longest palindrome can be formed with bbddc (The order can be any but the length is 5). 
+Example Input/Output 2: 
+Input: racecar Output: 4
