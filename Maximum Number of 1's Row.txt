@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, j;
+    int matrix[N][N];
+
+    // Read the size of the matrix (N x N)
+    scanf("%d", &N);
+
+    // Read the matrix elements
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    int max_count = -1;
+    int max_row_number = -1;
+
+    // Calculate the count of 1's in each row and find the row number with the maximum count
+    for (i = 0; i < N; i++) {
+        int count = 0;
+        for (j = 0; j < N; j++) {
+            if (matrix[i][j] == 1) {
+                count++;
+            }
+        }
+
+        if (count > max_count) {
+            max_count = count;
+            max_row_number = i + 1;
+        }
+    }
+
+    printf("%d\n", max_row_number);
+
+    return 0;
+}
+
+Example Input/Output 1: Input
+
+4
+
+0 1 1 1
+
+1 0 1 0
+
+1 1 1 1
+
+0 0 0 0
+
+Output:
+
+3
+
+Explanation:
+
+The first row contains three 1's. So, the count is 3.
+ 
+The second row contains two 1's. So, the count is 2.
+
+The third row contains four 1's. So, the count is 4.
+
+The fourth row contains zero 1's. So, the count is 0. 
+
+Here the maximum count is 4 and their corresponding row is 3.
+
+Hence the output is 3.
+
+Example Input/Output 2:
+
+Input:
+
+3 
+1  0  0
+0  1  1
+1  1  0
+
+Output:
+
+2
+
+
