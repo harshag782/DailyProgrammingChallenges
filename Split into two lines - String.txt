@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[101];
+    scanf("%s", str);
+
+    int len = strlen(str);
+    char line1[101], line2[101];
+
+    // Initialize the lines
+    for (int i = 0; i < len; i++) {
+        line1[i] = line2[i] = '*';
+    }
+    line1[len] = line2[len] = '\0';
+
+    // Build the zigzag pattern
+    for (int i = 0; i < len; i++) {
+        if (i % 2 == 0) {
+            line1[i] = str[i];
+        } else {
+            line2[i] = str[i];
+        }
+    }
+
+    // Print the zigzag pattern
+    printf("%s\n%s\n", line1, line2);
+
+    return 0;
+}
+
+
+ Example Input/Output section.                                                                                                                                                                    Example Input/Output 1:                                                                                                                                                            Input: abcdefg                                                                                                                                                                  
+Output:                                                                                                                                                                                            a*c*e*g                                                                                                                                                                              *b*d*f*                                                                                                                                                                               Example Input/Output 2:                                                                                                                                                         Input: blockchain                                                                                                                                                          Output:                                                                                                                                                                        
+b*o*k*h*i*                                                                                                                                                                 
+*l*c*c*a*n
