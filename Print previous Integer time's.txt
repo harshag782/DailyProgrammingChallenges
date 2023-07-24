@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, j;
+    char S[15];
+    scanf("%d", &N);
+    sprintf(S, "%d", N);
+    for (i = 0; S[i + 1] != '\0'; i++)
+        for (j = 0; j < S[i + 1] - '0'; j++)
+            printf("%c", S[i]);
+    return 0;
+}
+
+Example Input/Output 1:
+
+Input:
+
+1232
+
+Output:
+
+1122233
+
+Explanation:
+
+The digit 1 has 2 after it. So 1 is repeated two times.
+
+The digit 2 has the digit 3 after it. So 2 is repeated 3 times. The digit 3 has the digit 2 before it. So 3 is repeated 2 times. The fourth digit 2 does not have any digit after it and hence is ignored
