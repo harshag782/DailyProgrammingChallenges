@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int smallestFactorCount = -1;
+
+    for (int i = 0; i < N; i++) {
+        int num;
+        scanf("%d", &num);
+
+        int factorCount = 0;
+        for (int j = 1; j <= num; j++) {
+            if (num % j == 0) {
+                factorCount++;
+            }
+        }
+
+        if (smallestFactorCount == -1 || factorCount < smallestFactorCount) {
+            smallestFactorCount = factorCount;
+        }
+    }
+
+    printf("%d\n", smallestFactorCount);
+    return 0;
+}
+
+
+Example Input/Output 1:
+ Input: 4 10 32 100 60
+ Output: 4 
+ Explanation: The factors of 10 are 1, 2, 5 and 10. So its factor count is 4. The factors of 32 are 1, 2, 4, 8, 16 and 32. So its factor count is 6. The factors of 100 are 1, 2, 4, 5, 10, 20, 25, 50 and 100. So its factor count is 9. The factors of 60 are 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 and 60. So its factor count is 12. Here the smallest factor count is 4. Hence the output is 4 Example Input/Output 2:
+ Input: 2 42 32 
+ Output: 6  
