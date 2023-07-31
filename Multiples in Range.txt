@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void printMultiplesInRange(int A, int B, int X, int Y, int Z) {
+    for (int num = A; num <= B; num++) {
+        if (num % X == 0 || num % Y == 0 || num % Z == 0) {
+            printf("%d ", num);
+        }
+    }
+}
+
+int main() {
+    int A, B, X, Y, Z;
+    
+    // Read inputs
+    scanf("%d %d", &A, &B);
+    scanf("%d %d %d", &X, &Y, &Z);
+    
+    // Call the function to print multiples
+    printMultiplesInRange(A, B, X, Y, Z);
+    
+    return 0;
+}
+
+Example Input/Output:
+Input:
+20 50
+24 30 41
+
+Output:
+24 30 41 48
