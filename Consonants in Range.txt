@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    
+     char ch1,ch2;
+     scanf("%c %c",&ch1,&ch2);
+     if(ch1<ch2)
+     {
+      for(;ch1<=ch2;ch1++)
+      {
+        if(ch1!='a' && ch1!='e' && ch1!='i' && ch1!='o' && ch1!='u')
+        {   
+              printf("%c ",ch1);
+        }
+      }
+    }
+    else
+     {
+        for(;ch1>=ch2;ch1--)
+        {
+           if(ch1!='a' && ch1!='e' && ch1!='i' && ch1!='o'&& ch1!='u')
+           {   
+              printf("%c ",ch1);
+           }
+        }
+    }
+}
+   Example Input/Output 11
+  Input:
+  a z
+  Output:
+  b c d f g h j k l m n p q e s t v w x y z
+ Explanation:
+ All the consonants (except the vowel) from a to z are printed as the output
+
+            
