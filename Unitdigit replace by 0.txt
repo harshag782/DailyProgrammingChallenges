@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    char str_N[20]; // Assuming the input won't exceed 20 digits
+    sprintf(str_N, "%d", N);
+
+    char unit_digit = str_N[strlen(str_N) - 1];
+
+    for (int i = 0; str_N[i] != '\0'; i++) {
+        if (str_N[i] == unit_digit) {
+            str_N[i] = '0';
+        }
+    }
+
+    int modified_N = atoi(str_N);
+
+    printf("%d\n", modified_N);
+
+    return 0;
+}
