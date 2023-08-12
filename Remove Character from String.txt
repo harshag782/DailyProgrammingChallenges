@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[101], ch;
+    scanf("%s %c", s, &ch);
+    int len = strlen(s);
+    int newIndex = 0;  // Index for the modified string without the removed character
+
+    for (int i = 0; i < len; i++) {
+        if (s[i] != ch) {
+            // If the current character is not the one to be removed, keep it in the modified string
+            s[newIndex] = s[i];
+            newIndex++;
+        }
+    }
+
+    // Add null-terminator at the end of the modified string
+    s[newIndex] = '\0';
+
+    printf("Modified string: %s\n", s);
+
+    return 0;
+}
+
